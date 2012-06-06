@@ -1,2 +1,2 @@
-pytrigger
-=========
+{{module.name}}
+=============
