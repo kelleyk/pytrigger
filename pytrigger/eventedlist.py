@@ -4,26 +4,18 @@ import logging
 
 log = logging.getLogger(__name__)
 
-class EventedList(EventedMixin):
-    def __init__(self, seq=None):
-        self.contents = list(seq)
+from .evented import EventedMixin
+from .hookedlist import HookedList
 
-    def __len__(self):
-        return len(self.contents)
+class EventedList(EventedMixin, HookedList):
+    def on_add(self, idx, value):
+        pass
 
-    def __getitem__(self, key):
-        return self.contents[key]
+    def on_remove(self, idx, value):
+        pass
 
-    def __iter__(self):
-        return self.contents.iterkeys()
+    def on_change(self, idx, value, old_value):
+        pass
 
-    def iterkeys(self):
-        return self.contents.iterkeys()
-
-    def __contains__(self, item):
-        return item in self.contents
-
-    def __set__(self, instance, value):
-        self.contents = value
-
-    
+    def on_set(self):
+        pass

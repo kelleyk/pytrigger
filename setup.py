@@ -10,12 +10,12 @@ def read_requirements(path='requirements.txt'):
     return list(filter(None, map(before_comment, lines)))
 
 setup(
-    name='{{module.name}}',
-    version='{{module.version}}',
-    description='{{module.description}}',
-    author='{{author.name}}',
-    author_email='{{author.email}}',
-    url='{{module.url}}',
-    packages=['{{module.name}}'],
+    name='pytrigger',
+    version='0.0.1',
+    description='',
+    author='Kevin Kelley',
+    author_email='kelleyk@kelleyk.net',
+    url='https://github.com/kelleyk/pytrigger',
+    packages=['pytrigger'],
     install_requires=read_requirements(),
     )
