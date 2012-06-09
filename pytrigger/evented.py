@@ -90,7 +90,7 @@ class EventedMixin(object):
             if len(self._handlers[event]) == 0:
                 del self._handlers[event]
 
-    def _trigger(self, event, *args, **kwargs):
+    def trigger(self, event, *args, **kwargs):
         """Invoke callbacks for handlers who implement callback_name.
         Other arguments are passed on to that function.
 
@@ -112,4 +112,4 @@ class EventedMixin(object):
                 callback_wrapper(handler, *args, **kwargs)
 
         if event != 'all':
-            self._trigger('all', event, args, kwargs)
+            self.trigger('all', event, args, kwargs)

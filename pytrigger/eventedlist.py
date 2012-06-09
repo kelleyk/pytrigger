@@ -7,6 +7,7 @@ log = logging.getLogger(__name__)
 from .evented import EventedMixin
 from .hookedlist import HookedList
 
+    # TODO: evented list should provide item's index with events
 class EventedList(EventedMixin, HookedList):
     def on_add(self, idx, value):
         pass
